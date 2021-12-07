@@ -1,7 +1,7 @@
-module github.com/aquasecurity/libbpfgo/selftest/map-update
+module github.com/seek-ret/libbpfgo/selftest/map-update
 
 go 1.16
 
-require github.com/aquasecurity/libbpfgo v0.2.1-libbpf-0.4.0
+require github.com/seek-ret/libbpfgo v0.2.1-libbpf-0.4.0
 
-replace github.com/aquasecurity/libbpfgo => ../../
+replace github.com/seek-ret/libbpfgo => ../../

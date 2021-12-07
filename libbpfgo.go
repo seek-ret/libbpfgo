@@ -87,7 +87,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/aquasecurity/libbpfgo/helpers"
+	"github.com/seek-ret/libbpfgo/helpers"
 )
 
 const (

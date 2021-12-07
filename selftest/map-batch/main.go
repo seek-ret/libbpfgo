@@ -9,7 +9,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	bpf "github.com/aquasecurity/libbpfgo"
+	bpf "github.com/seek-ret/libbpfgo"
 )
 
 func main() {
