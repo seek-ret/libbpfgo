@@ -11,8 +11,7 @@ import (
 //export perfCallback
 func perfCallback(ctx unsafe.Pointer, cpu C.int, data unsafe.Pointer, size C.int) {
 	pb := eventChannels.Get(uint(uintptr(ctx))).(*PerfBuffer)
-	pb.eventsChan <- C.GoBytes(data, size)
-
+	pb.eventsChan <- (*[0x7fffffff]byte)(data)[:size:size]
 }
 
 //export perfLostCallback
