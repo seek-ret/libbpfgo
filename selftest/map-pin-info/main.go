@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	bpf "github.com/aquasecurity/libbpfgo"
+	bpf "github.com/seek-ret/libbpfgo"
 )
 
 func getSupposedPinPath(m *bpf.BPFMap) string {

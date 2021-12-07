@@ -11,7 +11,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	bpf "github.com/aquasecurity/libbpfgo"
+	bpf "github.com/seek-ret/libbpfgo"
 	"net"
 	"os"
 	"time"

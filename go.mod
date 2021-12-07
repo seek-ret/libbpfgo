@@ -1,4 +1,4 @@
-module github.com/aquasecurity/libbpfgo
+module github.com/seek-ret/libbpfgo
 
 go 1.16
 
