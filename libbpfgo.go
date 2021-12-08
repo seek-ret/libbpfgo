@@ -1280,7 +1280,7 @@ func (pb *PerfBuffer) poll() error {
 		case <-pb.stop:
 			return nil
 		default:
-			err := C.perf_buffer__poll(pb.pb, 300)
+			err := C.perf_buffer__poll(pb.pb, 500)
 			if err < 0 {
 				if syscall.Errno(-err) == syscall.EINTR {
 					continue
