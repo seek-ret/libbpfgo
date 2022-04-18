@@ -317,7 +317,7 @@ func (m *Module) Close() {
 }
 
 func (m *Module) BPFLoadObject() error {
-	fmt.Print("Loading bpf object")
+	fmt.Print("libbpfgo: Loading bpf object\n")
 	ret := C.bpf_object__load(m.obj)
 	if ret != 0 {
 		fmt.Printf("Ret value: %d/n", int32(ret))
