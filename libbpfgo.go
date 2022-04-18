@@ -317,12 +317,25 @@ func (m *Module) Close() {
 }
 
 func (m *Module) BPFLoadObject() error {
+	fmt.Print("Loading bpf object")
 	ret := C.bpf_object__load(m.obj)
 	if ret != 0 {
-		return fmt.Errorf("failed to load BPF object")
+		fmt.Printf("Ret value: %d/n", int32(ret))
+		return errptrError2(int32(ret), "failed to load BPF object:")
+		// return fmt.Errorf("failed to load BPF object: %d", int32(ret))
 	}
 
 	return nil
+}
+
+func errptrError2(ptr int32, format string, args ...interface{}) error {
+	errno := syscall.Errno(-int64(ptr))
+	if errno == 0 {
+		return fmt.Errorf(format, args...)
+	}
+
+	args = append(args, errno.Error())
+	return fmt.Errorf(format+": %v", args...)
 }
 
 func (m *Module) GetMap(mapName string) (*BPFMap, error) {
